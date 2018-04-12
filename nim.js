@@ -1,7 +1,7 @@
+$(function() {
 //***************
 //  STATE
 //***************
-$(function() {
 var chips = 16;
 var playerOneChips = 0;
 var playerTwoChips = 0;
@@ -61,14 +61,14 @@ function renderGame() {
 
 function takeChip() {
   
-  if (chipsTakenThisTurn === 3) {
+  if (chipsTakenThisTurn == 3) {
     alert("you can't take any more chips!");
     return;
   }
   chips--;
   chipsTakenThisTurn++;
   
-  if (currentPlayer === 1) {
+  if (currentPlayer == 1) {
     playerOneChips++;
   } else {
     playerTwoChips++;//++ means increment
@@ -78,12 +78,11 @@ function takeChip() {
     alert("Game Over!");
     resetGame();
   }
-
   renderGame();
 }
 
 function pass() {
-  if (chipsTakenThisTurn == 0) {
+  if (chipsTakenThisTurn === 0) {
     alert('hey, you need to take at least one');
     return;
   }
@@ -111,8 +110,6 @@ function resetGame() {
 //rewrite the onclick methods in the style of jquery
 $(playerOneTake).click(function() {
   takeChip();
-}
-  takeChip();
 });
 
 $(playerTwoTake).click(function() {
@@ -127,6 +124,6 @@ $(playerTwoPass).click(function() {
   pass();
 });
 
-resetGame();
 
+resetGame();
 });
